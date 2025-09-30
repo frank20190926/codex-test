@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "description": "海上光伏结构监测系统预警数据示例",
+    "version": "1.0",
+    "created_date": "2024-12-19",
+    "platform_types": {
+      "rigid": "刚性平台 - 固定式海上光伏平台，结构稳定，主要关注结构疲劳和腐蚀",
+      "flexible": "柔性平台 - 浮动式海上光伏平台，结构可动，主要关注动态响应和锚固系统"
+    },
+    "warning_levels": {
+      "normal": "正常状态 (0-25%)",
+      "warning": "预警状态 (25-50%)",
+      "critical": "危险状态 (50-75%)",
+      "emergency": "紧急状态 (75-100%)"
+    }
+  },
+  "platforms": [
+    {
+      "platformId": "RIGID_001",
+      "platformName": "刚性平台A区",
+      "platformType": "rigid",
+      "location": {
+        "latitude": 26.8234,
+        "longitude": 119.5678,
+        "water_depth": 15.5
+      },
+      "installation_date": "2023-06-15",
+      "warningData": [
+        {
+          "sensorType": "cable_tension",
+          "sensorName": "索力监测",
+          "sensorId": "CT_001",
+          "currentValue": 1250.5,
+          "unit": "kN",
+          "normalRange": {
+            "min": 1000,
+            "max": 1500
+          },
+          "warningThresholds": {
+            "warning": 1400,
+            "critical": 1450,
+            "emergency": 1480
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 16.7,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "stable",
+          "description": "主缆索力正常，结构稳定"
+        },
+        {
+          "sensorType": "structural_stress",
+          "sensorName": "结构应力监测",
+          "sensorId": "SS_001",
+          "currentValue": 85.2,
+          "unit": "MPa",
+          "normalRange": {
+            "min": 0,
+            "max": 120
+          },
+          "warningThresholds": {
+            "warning": 90,
+            "critical": 100,
+            "emergency": 110
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 71.0,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "结构应力在正常范围内，略有上升趋势"
+        },
+        {
+          "sensorType": "vibration_frequency",
+          "sensorName": "振动频率监测",
+          "sensorId": "VF_001",
+          "currentValue": 2.35,
+          "unit": "Hz",
+          "normalRange": {
+            "min": 1.8,
+            "max": 3.2
+          },
+          "warningThresholds": {
+            "warning": 3.0,
+            "critical": 3.1,
+            "emergency": 3.15
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 39.3,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "stable",
+          "description": "结构固有频率正常，无异常振动"
+        },
+        {
+          "sensorType": "corrosion_level",
+          "sensorName": "腐蚀监测",
+          "sensorId": "CL_001",
+          "currentValue": 12.8,
+          "unit": "%",
+          "normalRange": {
+            "min": 0,
+            "max": 25
+          },
+          "warningThresholds": {
+            "warning": 20,
+            "critical": 22,
+            "emergency": 24
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 51.2,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "slowly_increasing",
+          "description": "腐蚀程度在可接受范围内，需定期监测"
+        }
+      ]
+    },
+    {
+      "platformId": "RIGID_002",
+      "platformName": "刚性平台B区",
+      "platformType": "rigid",
+      "location": {
+        "latitude": 26.8456,
+        "longitude": 119.5890,
+        "water_depth": 18.2
+      },
+      "installation_date": "2023-08-20",
+      "warningData": [
+        {
+          "sensorType": "cable_tension",
+          "sensorName": "索力监测",
+          "sensorId": "CT_002",
+          "currentValue": 1420.8,
+          "unit": "kN",
+          "normalRange": {
+            "min": 1000,
+            "max": 1500
+          },
+          "warningThresholds": {
+            "warning": 1400,
+            "critical": 1450,
+            "emergency": 1480
+          },
+          "warningLevel": "warning",
+          "warningPercentage": 84.2,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "索力接近预警阈值，需密切关注"
+        },
+        {
+          "sensorType": "structural_stress",
+          "sensorName": "结构应力监测",
+          "sensorId": "SS_002",
+          "currentValue": 95.6,
+          "unit": "MPa",
+          "normalRange": {
+            "min": 0,
+            "max": 120
+          },
+          "warningThresholds": {
+            "warning": 90,
+            "critical": 100,
+            "emergency": 110
+          },
+          "warningLevel": "warning",
+          "warningPercentage": 79.7,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "结构应力超过预警阈值，建议检查"
+        }
+      ]
+    },
+    {
+      "platformId": "FLEXIBLE_001",
+      "platformName": "柔性平台C区",
+      "platformType": "flexible",
+      "location": {
+        "latitude": 26.7890,
+        "longitude": 119.6123,
+        "water_depth": 35.8
+      },
+      "installation_date": "2023-09-10",
+      "warningData": [
+        {
+          "sensorType": "displacement",
+          "sensorName": "位移监测",
+          "sensorId": "DP_001",
+          "currentValue": 3.2,
+          "unit": "m",
+          "normalRange": {
+            "min": 0,
+            "max": 8.0
+          },
+          "warningThresholds": {
+            "warning": 6.0,
+            "critical": 7.0,
+            "emergency": 7.5
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 40.0,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "oscillating",
+          "description": "平台位移在正常范围内，随波浪周期性变化"
+        },
+        {
+          "sensorType": "anchor_tension",
+          "sensorName": "锚链张力监测",
+          "sensorId": "AT_001",
+          "currentValue": 2850.5,
+          "unit": "kN",
+          "normalRange": {
+            "min": 2000,
+            "max": 4000
+          },
+          "warningThresholds": {
+            "warning": 3500,
+            "critical": 3800,
+            "emergency": 3900
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 42.5,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "stable",
+          "description": "锚链张力正常，锚固系统稳定"
+        },
+        {
+          "sensorType": "tilt_angle",
+          "sensorName": "倾斜角度监测",
+          "sensorId": "TA_001",
+          "currentValue": 2.8,
+          "unit": "度",
+          "normalRange": {
+            "min": 0,
+            "max": 8.0
+          },
+          "warningThresholds": {
+            "warning": 6.0,
+            "critical": 7.0,
+            "emergency": 7.5
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 35.0,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "oscillating",
+          "description": "平台倾斜角度正常，随海况变化"
+        },
+        {
+          "sensorType": "wave_response",
+          "sensorName": "波浪响应监测",
+          "sensorId": "WR_001",
+          "currentValue": 1.85,
+          "unit": "m/s²",
+          "normalRange": {
+            "min": 0,
+            "max": 3.0
+          },
+          "warningThresholds": {
+            "warning": 2.5,
+            "critical": 2.8,
+            "emergency": 2.9
+          },
+          "warningLevel": "normal",
+          "warningPercentage": 61.7,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "variable",
+          "description": "波浪响应加速度正常，平台动态特性良好"
+        }
+      ]
+    },
+    {
+      "platformId": "FLEXIBLE_002",
+      "platformName": "柔性平台D区",
+      "platformType": "flexible",
+      "location": {
+        "latitude": 26.7654,
+        "longitude": 119.6345,
+        "water_depth": 42.1
+      },
+      "installation_date": "2023-10-05",
+      "warningData": [
+        {
+          "sensorType": "displacement",
+          "sensorName": "位移监测",
+          "sensorId": "DP_002",
+          "currentValue": 6.8,
+          "unit": "m",
+          "normalRange": {
+            "min": 0,
+            "max": 8.0
+          },
+          "warningThresholds": {
+            "warning": 6.0,
+            "critical": 7.0,
+            "emergency": 7.5
+          },
+          "warningLevel": "critical",
+          "warningPercentage": 85.0,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "平台位移超过危险阈值，海况恶劣，需立即关注"
+        },
+        {
+          "sensorType": "anchor_tension",
+          "sensorName": "锚链张力监测",
+          "sensorId": "AT_002",
+          "currentValue": 3750.2,
+          "unit": "kN",
+          "normalRange": {
+            "min": 2000,
+            "max": 4000
+          },
+          "warningThresholds": {
+            "warning": 3500,
+            "critical": 3800,
+            "emergency": 3900
+          },
+          "warningLevel": "warning",
+          "warningPercentage": 87.5,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "锚链张力接近临界值，锚固系统承受较大载荷"
+        },
+        {
+          "sensorType": "tilt_angle",
+          "sensorName": "倾斜角度监测",
+          "sensorId": "TA_002",
+          "currentValue": 6.5,
+          "unit": "度",
+          "normalRange": {
+            "min": 0,
+            "max": 8.0
+          },
+          "warningThresholds": {
+            "warning": 6.0,
+            "critical": 7.0,
+            "emergency": 7.5
+          },
+          "warningLevel": "warning",
+          "warningPercentage": 81.3,
+          "timestamp": "2024-12-19T10:30:00Z",
+          "trend": "increasing",
+          "description": "平台倾斜角度超过预警值，需检查稳定性"
+        }
+      ]
+    }
+  ],
+  "environmental_conditions": {
+    "current_weather": {
+      "wind_speed": 12.5,
+      "wind_direction": 225,
+      "wave_height": 2.8,
+      "wave_period": 8.5,
+      "current_speed": 0.8,
+      "visibility": 15.2,
+      "timestamp": "2024-12-19T10:30:00Z"
+    },
+    "forecast": {
+      "next_6h": "海况逐渐恶化，风浪增大",
+      "next_24h": "强风警报，建议加强监测"
+    }
+  },
+  "analysis_summary": {
+    "rigid_platforms": {
+      "total_count": 2,
+      "normal_count": 1,
+      "warning_count": 1,
+      "critical_count": 0,
+      "emergency_count": 0,
+      "key_concerns": [
+        "RIGID_002平台索力和应力接近预警阈值",
+        "整体结构稳定性良好",
+        "腐蚀监测需持续关注"
+      ]
+    },
+    "flexible_platforms": {
+      "total_count": 2,
+      "normal_count": 1,
+      "warning_count": 1,
+      "critical_count": 1,
+      "emergency_count": 0,
+      "key_concerns": [
+        "FLEXIBLE_002平台位移超过危险阈值",
+        "锚固系统承受较大载荷",
+        "海况恶化对柔性平台影响更大"
+      ]
+    },
+    "recommendations": [
+      "加强对FLEXIBLE_002平台的实时监测",
+      "检查RIGID_002平台的结构状态",
+      "根据天气预报调整监测频率",
+      "准备应急响应措施"
+    ]
+  }
+}
